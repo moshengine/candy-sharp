@@ -1,0 +1,16 @@
+using UnityEngine;
+using UniRx;
+
+public class {{EntityName}}Controller : MonoBehaviour
+{
+    public {{EntityName}}Config Config;
+    public {{EntityName}}View View;
+    
+    public {{EntityName}}State State { get; private set; }
+
+    public void Initialize({{EntityName}}State state)
+    {
+        State = state;
+        View.Initialize(state);
+    }
+}

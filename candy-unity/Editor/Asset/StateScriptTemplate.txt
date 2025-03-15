@@ -1,0 +1,12 @@
+using UnityEngine;
+using UniRx;
+
+public class {{EntityName}}State
+{
+    public {{EntityName}}Controller Controller { get; private set; }
+
+    public {{EntityName}}State({{EntityName}}Controller controller)
+    {
+        Controller = controller;
+    }
+}

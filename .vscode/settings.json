@@ -1,0 +1,9 @@
+{
+    "dotnet.defaultSolution": "candy-sharp.sln",
+    "files.exclude": {
+        "**/obj/": true,
+        "**/bin/": true
+    },
+    "dotnet.preferCSharpExtension": true,
+    "explorer.excludeGitIgnore": false
+}

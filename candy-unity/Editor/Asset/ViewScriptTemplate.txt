@@ -1,0 +1,9 @@
+using UnityEngine;
+using UniRx;
+
+public class {{EntityName}}View : MonoBehaviour
+{
+    public void Initialize({{EntityName}}State state)
+    {
+    }
+}

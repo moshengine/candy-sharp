@@ -1,0 +1,6 @@
+using UnityEngine;
+
+[Serializable]
+public class {{EntityName}}Config
+{
+}

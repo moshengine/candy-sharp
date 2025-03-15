@@ -1,0 +1,15 @@
+{
+  "name": "com.danielkreitsch.candy-unity",
+  "version": "0.0.0",
+  "displayName": "Candy Unity",
+  "dependencies": {
+    "com.bgtools.playerprefseditor": "1.2.2",
+    "com.dbrizov.naughtyattributes": "2.1.4",
+    "com.neuecc.unirx": "7.1.0",
+    "com.nobi.roundedcorners": "3.4.1",
+    "com.svermeulen.extenject": "9.2.0-stcf3",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.2d.tilemap": "1.0.0",
+    "com.unity.2d.tilemap.extras": "3.1.3"
+  }
+}

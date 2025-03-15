@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>9.0</LangVersion>
+        <ProduceReferenceAssembly>true</ProduceReferenceAssembly><!-- Can be removed when upgrading from .NET 2.1 -->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="MongoDB.Bson" Version="3.2.1" />
+        <PackageReference Include="MongoDB.Driver" Version="3.2.1" />
+    </ItemGroup>
+
+</Project>
