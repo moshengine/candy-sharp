@@ -2,7 +2,7 @@
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace CandyCore
+namespace Candy.Unity
 {
   public class StartFromFirstScene
   {

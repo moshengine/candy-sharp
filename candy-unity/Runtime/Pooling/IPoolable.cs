@@ -1,4 +1,4 @@
-﻿namespace CandyCore
+﻿namespace Candy.Unity
 {
     /// <summary>
     /// Interface for poolable objects. Objects implementing this interface

@@ -15,7 +15,7 @@ namespace DanielKreitsch
         /// Collection of disposables that will be automatically disposed when this MonoBehaviour is destroyed.
         /// </summary>
         protected CompositeDisposable _disposables = new();
-        
+
         /// <summary>
         /// Gets the CompositeDisposable for adding disposables from outside the class.
         /// </summary>

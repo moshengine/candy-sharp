@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PathToAscension.Development
+namespace Candy.Unity
 {
     /**
      * Useful for testing purposes.

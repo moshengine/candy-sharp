@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-namespace PathToAscension.Development
+namespace Candy.Unity
 {
     public class SceneSwitcher : MonoBehaviour
     {

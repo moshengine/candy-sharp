@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace CandyCore
+namespace Candy.Unity
 {
   /// <summary>
   ///   Responsible for managing the transition between scenes.

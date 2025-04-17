@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CandyCore
+namespace Candy.Unity
 {
     /// <summary>
     /// Generic object pool for Unity components that implement IPoolable interface.
     /// </summary>
     /// <typeparam name="T">The type of component to pool, must implement IPoolable.</typeparam>
-    public class ObjectPool<T> where T : Component, IPoolable
+    public class ObjectPool<T>
+        where T : Component, IPoolable
     {
         private readonly Queue<T> _pool = new(); // Queue to store inactive objects
         private readonly T _prefab; // Prefab to instantiate new objects
@@ -68,7 +69,8 @@ namespace CandyCore
         /// <param name="obj">The object to despawn.</param>
         public void Despawn(T obj)
         {
-            if (obj == null) throw new ArgumentNullException(nameof(obj));
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
 
             obj.OnDespawn(); // Call IPoolable.OnDespawn()
             obj.gameObject.SetActive(false);

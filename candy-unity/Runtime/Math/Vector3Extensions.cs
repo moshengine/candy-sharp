@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace General.Utility
+namespace Candy.Unity
 {
     public static class Vector3Extensions
     {

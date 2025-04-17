@@ -1,10 +1,15 @@
 using UnityEngine;
 
-namespace General.Utility
+namespace Candy.Unity
 {
     public static class SmoothDampUtility
     {
-        public static Vector3 SmoothDampEuler(Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime)
+        public static Vector3 SmoothDampEuler(
+            Vector3 current,
+            Vector3 target,
+            ref Vector3 currentVelocity,
+            float smoothTime
+        )
         {
             return new Vector3(
                 Mathf.SmoothDampAngle(current.x, target.x, ref currentVelocity.x, smoothTime),
@@ -13,7 +18,12 @@ namespace General.Utility
             );
         }
 
-        public static Quaternion SmoothDampQuaternion(Quaternion current, Quaternion target, ref Vector3 currentVelocity, float smoothTime)
+        public static Quaternion SmoothDampQuaternion(
+            Quaternion current,
+            Quaternion target,
+            ref Vector3 currentVelocity,
+            float smoothTime
+        )
         {
             Vector3 c = current.eulerAngles;
             Vector3 t = target.eulerAngles;

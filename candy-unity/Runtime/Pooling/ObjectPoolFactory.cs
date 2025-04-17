@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace CandyCore
+namespace Candy.Unity
 {
     /// <summary>
     /// Factory class for creating ObjectPool instances using Zenject dependency injection framework.

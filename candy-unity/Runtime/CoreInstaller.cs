@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace CandyCore
+namespace Candy.Unity
 {
   public class CoreInstaller : MonoInstaller
   {

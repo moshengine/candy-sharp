@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CandyCore
+namespace Candy.Unity
 {
     /// <summary>
     /// Base class for objects that can be managed by an ObjectPool.

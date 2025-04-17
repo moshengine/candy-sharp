@@ -1,4 +1,4 @@
-﻿namespace General.Utility
+﻿namespace Candy.Unity
 {
     public static class ModuloExtensions
     {

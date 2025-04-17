@@ -1,9 +1,9 @@
-using UnityEditor;
-using UnityEngine;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using UnityEditor;
+using UnityEngine;
 
 public class ProjectStructureValidator : EditorWindow
 {
@@ -30,7 +30,8 @@ public class ProjectStructureValidator : EditorWindow
     private void OnGUI()
     {
         EditorGUILayout.BeginHorizontal();
-        projectStructureAsset = EditorGUILayout.ObjectField("Config File", projectStructureAsset, typeof(TextAsset), false) as TextAsset;
+        projectStructureAsset =
+            EditorGUILayout.ObjectField("Config File", projectStructureAsset, typeof(TextAsset), false) as TextAsset;
         if (projectStructureAsset != null && GUILayout.Button("Open", GUILayout.Width(60)))
         {
             AssetDatabase.OpenAsset(projectStructureAsset);
@@ -85,7 +86,6 @@ public class ProjectStructureValidator : EditorWindow
                 {
                     if (GUILayout.Button("Show Folder", GUILayout.Width(80)))
                     {
-
                         EditorGUIUtility.PingObject(AssetDatabase.LoadMainAssetAtPath(folderPath));
                         Selection.activeObject = AssetDatabase.LoadMainAssetAtPath(folderPath);
                     }
@@ -288,8 +288,11 @@ public class ProjectStructureValidator : EditorWindow
 
         // Set validation flags
         validationPerformed = true;
-        structureValid = missingFolders.Count == 0 && missingFiles.Count == 0 &&
-                         unexpectedRootFolders.Count == 0 && misplacedFiles.Count == 0;
+        structureValid =
+            missingFolders.Count == 0
+            && missingFiles.Count == 0
+            && unexpectedRootFolders.Count == 0
+            && misplacedFiles.Count == 0;
 
         // Repaint the window to show the results
         Repaint();
@@ -297,7 +300,9 @@ public class ProjectStructureValidator : EditorWindow
         // Output results to console
         if (!structureValid)
         {
-            Debug.LogWarning("Issues found in project structure. Check the Project Structure Validator window for details.");
+            Debug.LogWarning(
+                "Issues found in project structure. Check the Project Structure Validator window for details."
+            );
         }
     }
 
@@ -313,7 +318,9 @@ public class ProjectStructureValidator : EditorWindow
             string[] guids = AssetDatabase.FindAssets("ProjectStructure t:TextAsset");
             if (guids.Length == 0)
             {
-                throw new FileNotFoundException("Project structure reference file 'ProjectStructure.json' not found in the package.");
+                throw new FileNotFoundException(
+                    "Project structure reference file 'ProjectStructure.json' not found in the package."
+                );
             }
 
             string jsonPath = AssetDatabase.GUIDToAssetPath(guids[0]);

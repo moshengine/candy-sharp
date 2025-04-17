@@ -5,7 +5,7 @@ using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace CandyCore
+namespace Candy.Unity
 {
     public class HttpClient : MonoBehaviour
     {
@@ -82,7 +82,10 @@ namespace CandyCore
             }
             else
             {
-                var response = JsonConvert.DeserializeObject<TResponse>(webRequest.downloadHandler.text, _jsonSerializerSettings);
+                var response = JsonConvert.DeserializeObject<TResponse>(
+                    webRequest.downloadHandler.text,
+                    _jsonSerializerSettings
+                );
                 onSuccess?.Invoke(response);
             }
         }

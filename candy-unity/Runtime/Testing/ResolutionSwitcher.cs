@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace PathToAscension.Development
+namespace Candy.Unity
 {
     public class ResolutionSwitcher : MonoBehaviour
     {

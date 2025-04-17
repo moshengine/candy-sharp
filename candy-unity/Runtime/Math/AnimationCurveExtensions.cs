@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace General.Utility
+namespace Candy.Unity
 {
     public static class AnimationCurveExtensions
     {
