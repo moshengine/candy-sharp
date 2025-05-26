@@ -8,8 +8,6 @@
     <ItemGroup>
         <ProjectReference Include="..\candy-common\Candy.Common.csproj" />
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="MongoDB.Bson" Version="3.2.1" />
-        <PackageReference Include="MongoDB.Driver" Version="3.2.1" />
         <PackageReference Include="Notion.Net" Version="4.2.0" />
     </ItemGroup>
 
