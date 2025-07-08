@@ -4,7 +4,6 @@
     "_Game/Art",
     "_Game/Audio",
     "_Game/Config",
-    "_Game/Documentation",
     "_Game/Prefabs",
     "_Game/Resources",
     "_Game/Scenes",
@@ -30,7 +29,6 @@
     "_Game/Audio/SFX",
     "_Game/Config",
     "_Game/Config/URP",
-    "_Game/Documentation",
     "_Game/Prefabs",
     "_Game/Resources",
     "_Game/Scenes",
@@ -60,7 +58,6 @@
       ".jpg": ["_Game/Art/Sprites", "_Game/Art/Textures"],
       ".json": ["_Game/Config"],
       ".mat": ["_Game/Art/Materials"],
-      ".md": ["_Game/Documentation"],
       ".mixer": ["_Game/Audio"],
       ".mp3": ["_Game/Audio/Music", "_Game/Audio/SFX"],
       ".otf": ["_Game/Art/Fonts"],
@@ -77,6 +74,7 @@
     "_Game/Resources",
     "Plugins",
     "StreamingAssets",
+    "StreamingLanguageModels",
     "TheraBytes",
     "ThirdParty"
   ]
