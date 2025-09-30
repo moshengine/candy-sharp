@@ -3,7 +3,7 @@ using System.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Candy.AspNet
+namespace Candy.Logging
 {
     public static class Debug
     {

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Candy.Logging;
 using Notion.Client;
 
 namespace Candy.AspNet

@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -7,6 +7,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Candy.Blazor", "candy-blazor\Candy.Blazor.csproj", "{431BA043-082C-A7FD-CD07-98F82344B046}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Candy.Common", "candy-common\Candy.Common.csproj", "{1A2DAE43-A824-2B09-CCE5-4045A13F84C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Candy.Logging", "candy-logging\Candy.Logging.csproj", "{523C618C-FD89-4E64-864B-8C3159B36079}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{1A2DAE43-A824-2B09-CCE5-4045A13F84C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A2DAE43-A824-2B09-CCE5-4045A13F84C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A2DAE43-A824-2B09-CCE5-4045A13F84C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523C618C-FD89-4E64-864B-8C3159B36079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523C618C-FD89-4E64-864B-8C3159B36079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523C618C-FD89-4E64-864B-8C3159B36079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523C618C-FD89-4E64-864B-8C3159B36079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
