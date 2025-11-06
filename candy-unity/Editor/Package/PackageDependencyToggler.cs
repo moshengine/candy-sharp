@@ -44,8 +44,7 @@ namespace Candy.Unity.Editor
             {
                 if (!File.Exists(MANIFEST_PATH))
                 {
-                    EditorUtility.DisplayDialog("Error", 
-                        $"Could not find manifest.json at {MANIFEST_PATH}", "OK");
+                    EditorUtility.DisplayDialog("Error", $"Could not find manifest.json at {MANIFEST_PATH}", "OK");
                     return;
                 }
 
@@ -59,25 +58,25 @@ namespace Candy.Unity.Editor
                     // Pattern: "package-name": "https://github.com/glowdragon/candy-sharp.git?path=/some/path"
                     var pattern = $@"""([^""]+)"":\s*""{Regex.Escape(GITHUB_BASE_URL)}(/[^""]+)""";
                     var matches = Regex.Matches(manifestContent, pattern);
-                    
+
                     foreach (Match match in matches)
                     {
                         string packageName = match.Groups[1].Value;
                         string gitPath = match.Groups[2].Value; // e.g., "/candy-unity" or "/unity-assets/debug-log-extensions"
-                        
+
                         // Remove leading slash from git path
                         string relativePath = gitPath.TrimStart('/');
-                        
+
                         // Special case: candy-unity package points to /candy-unity/unity subdirectory
                         if (relativePath == "candy-unity")
                         {
                             relativePath = "candy-unity/unity";
                         }
-                        
+
                         string localPath = LOCAL_BASE_PATH + relativePath;
                         string oldValue = $@"""{packageName}"": ""{GITHUB_BASE_URL}{gitPath}""";
                         string newValue = $@"""{packageName}"": ""{localPath}""";
-                        
+
                         manifestContent = manifestContent.Replace(oldValue, newValue);
                         conversionCount++;
                         Debug.Log($"Converted {packageName} to local path: {localPath}");
@@ -89,12 +88,12 @@ namespace Candy.Unity.Editor
                     // Pattern: "package-name": "file:../../../../candy-sharp/some/path"
                     var pattern = $@"""([^""]+)"":\s*""{Regex.Escape(LOCAL_BASE_PATH)}([^""]+)""";
                     var matches = Regex.Matches(manifestContent, pattern);
-                    
+
                     foreach (Match match in matches)
                     {
                         string packageName = match.Groups[1].Value;
                         string localPath = match.Groups[2].Value; // e.g., "candy-unity/unity" or "unity-assets/debug-log-extensions"
-                        
+
                         // Special case: candy-unity/unity subdirectory should map to /candy-unity in git
                         string gitPath;
                         if (localPath == "candy-unity/unity")
@@ -105,11 +104,11 @@ namespace Candy.Unity.Editor
                         {
                             gitPath = "/" + localPath;
                         }
-                        
+
                         string externalPath = GITHUB_BASE_URL + gitPath;
                         string oldValue = $@"""{packageName}"": ""{LOCAL_BASE_PATH}{localPath}""";
                         string newValue = $@"""{packageName}"": ""{externalPath}""";
-                        
+
                         manifestContent = manifestContent.Replace(oldValue, newValue);
                         conversionCount++;
                         Debug.Log($"Converted {packageName} to external path: {externalPath}");
@@ -118,28 +117,30 @@ namespace Candy.Unity.Editor
 
                 if (conversionCount == 0)
                 {
-                    EditorUtility.DisplayDialog("No Changes", 
-                        $"No candy-sharp packages found to convert to {(toLocal ? "local" : "external")} format.", "OK");
+                    EditorUtility.DisplayDialog(
+                        "No Changes",
+                        $"No candy-sharp packages found to convert to {(toLocal ? "local" : "external")} format.",
+                        "OK"
+                    );
                     return;
                 }
 
                 // Write the modified content back
                 File.WriteAllText(MANIFEST_PATH, manifestContent);
 
-                // Force Unity's Package Manager to resolve packages
-                // var resolveRequest = Client.Resolve();
+                EditorUtility.DisplayDialog(
+                    "Success",
+                    $"Converted {conversionCount} package(s) to {(toLocal ? "local" : "external")} format.",
+                    "OK"
+                );
                 
-                EditorUtility.DisplayDialog("Success", 
-                    $"Converted {conversionCount} package(s) to {(toLocal ? "local" : "external")} format.\n\n" +
-                    "Unity is now resolving the packages...", "OK");
+                AssetDatabase.Refresh();
             }
             catch (Exception ex)
             {
-                EditorUtility.DisplayDialog("Error", 
-                    $"Failed to toggle dependencies: {ex.Message}", "OK");
+                EditorUtility.DisplayDialog("Error", $"Failed to toggle dependencies: {ex.Message}", "OK");
                 Debug.LogError($"PackageDependencyToggler error: {ex}");
             }
         }
     }
 }
-

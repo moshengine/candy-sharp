@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Candy.Unity
+namespace Candy.Unity.Editor
 {
     public static class EditorGUICandy
     {

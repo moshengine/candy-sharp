@@ -6,7 +6,7 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-namespace Candy.Unity
+namespace Candy.Unity.Editor
 {
     public class EditorSpotlight : EditorWindow, IHasCustomMenu
     {

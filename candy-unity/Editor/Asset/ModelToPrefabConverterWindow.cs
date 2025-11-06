@@ -1,10 +1,11 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using static Candy.Unity.EditorGUICandy;
 
-namespace Candy.Unity
+namespace Candy.Unity.Editor
 {
+    using static EditorGUICandy;
+
     public class ModelToPrefabConverterWindow : EditorWindow
     {
         private GameObject _selectedModel;
