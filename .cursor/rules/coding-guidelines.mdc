@@ -1,0 +1,30 @@
+---
+description: Coding guidelines, including documentation preferences
+globs: 
+alwaysApply: true
+---
+
+# Coding Guidelines
+
+## Developer Profile
+
+Experienced developer - assume strong understanding of concepts
+
+## Code Style
+
+- Concise over verbose
+- Self-documenting code > comments
+- YAGNI principle
+- Show, don't explain
+- Namespaces: Maximum depth of two levels (one dot separator)
+
+## Documentation
+
+- READMEs: Only essentials (usage, 1-2 examples max, extension points)
+- Location: Feature-specific docs should be README.md files in the same folder as the code
+- Comments: Only for complex logic or non-obvious decisions
+- Avoid: Extensive examples, obvious explanations, step-by-step tutorials, feature lists, benefits sections
+ 
+## Commit Messages
+
+- Always provide a recommended commit message after making code changes
