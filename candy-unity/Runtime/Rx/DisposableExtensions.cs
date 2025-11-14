@@ -1,3 +1,4 @@
+#if R3_INSTALLED
 using System;
 using R3;
 using UnityEngine;
@@ -56,3 +57,4 @@ namespace Candy.Unity
         }
     }
 }
+#endif
