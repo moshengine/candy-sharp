@@ -11,12 +11,11 @@ namespace Candy.AspNet
             string databaseName
         )
         {
-            return services.AddScoped<IMongoDatabase>(sp =>
+            return services.AddSingleton<IMongoDatabase>(sp =>
             {
                 var client = new MongoClient(connectionString);
                 return client.GetDatabase(databaseName);
             });
-            //return services.AddSingleton(_ => new MongoDbContext(connectionString, databaseName));
         }
     }
 }

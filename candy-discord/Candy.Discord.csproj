@@ -8,6 +8,7 @@
     <ItemGroup>
         <PackageReference Include="Discord.Net" Version="3.18.0" />
         <PackageReference Include="Discord.Net.Interactions" Version="3.18.0" />
+        <PackageReference Include="MongoDB.Driver" Version="3.*" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\candy-common\Candy.Common.csproj" />
