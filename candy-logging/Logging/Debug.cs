@@ -7,7 +7,7 @@ namespace Candy.Logging
 {
     public static class Debug
     {
-        private static ILoggerFactory _loggerFactory;
+        private static ILoggerFactory _loggerFactory = null!;
 
         public static void InitializeCandyDebugClass(this ILoggingBuilder loggingBuilder)
         {

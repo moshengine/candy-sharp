@@ -31,7 +31,7 @@ namespace Candy.Logging
         public static IHostApplicationBuilder UseCandyLogging(
             this IHostApplicationBuilder builder,
             params string[] highlightWords
-        ) => UseCandyLogging(builder, null, highlightWords);
+        ) => UseCandyLogging(builder, null!, highlightWords);
 
         /// <summary>
         /// Adds Serilog logging with Candy's custom formatting to the host application builder
@@ -46,7 +46,7 @@ namespace Candy.Logging
         /// <returns>The host application builder for method chaining</returns>
         public static IHostApplicationBuilder UseCandyLogging(
             this IHostApplicationBuilder builder,
-            System.Action<LoggerConfiguration> configureLogger,
+            System.Action<LoggerConfiguration>? configureLogger,
             params string[] highlightWords
         )
         {
@@ -88,7 +88,7 @@ namespace Candy.Logging
         public static IHostBuilder UseCandyLogging(
             this IHostBuilder hostBuilder,
             params string[] highlightWords
-        ) => UseCandyLogging(hostBuilder, null, highlightWords);
+        ) => UseCandyLogging(hostBuilder, null!, highlightWords);
 
         /// <summary>
         /// Adds Serilog logging with Candy's custom formatting to the host builder
@@ -103,7 +103,7 @@ namespace Candy.Logging
         [System.Obsolete("Use the IHostApplicationBuilder overload with Host.CreateApplicationBuilder() instead. This method is retained for backward compatibility.")]
         public static IHostBuilder UseCandyLogging(
             this IHostBuilder hostBuilder,
-            System.Action<LoggerConfiguration> configureLogger,
+            System.Action<LoggerConfiguration>? configureLogger,
             params string[] highlightWords
         )
         {
