@@ -2,6 +2,7 @@
     "name": "Candy.Unity.Editor",
     "rootNamespace": "",
     "references": [
+        "GUID:c71b7cecc19f1f14fac3a0b482477128",
         "GUID:3a9781db4804a9945b9883f3a7c46d45",
         "GUID:613783dc1674e844b87788ea74ede0f6",
         "GUID:cbdf09464b6b87745be748a67e5a21a0"
