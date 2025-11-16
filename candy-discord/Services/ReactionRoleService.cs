@@ -23,6 +23,11 @@ public class ReactionRoleService
         ulong guildId
     )
     {
+        var filter = Builders<ReactionRoleMapping>.Filter.And(
+            Builders<ReactionRoleMapping>.Filter.Eq(m => m.MessageId, messageId),
+            Builders<ReactionRoleMapping>.Filter.Eq(m => m.Emoji, emoji)
+        );
+
         var mapping = new ReactionRoleMapping
         {
             MessageId = messageId,
@@ -31,7 +36,12 @@ public class ReactionRoleService
             GuildId = guildId,
         };
 
-        await _reactionRoles.InsertOneAsync(mapping);
+        await _reactionRoles.ReplaceOneAsync(
+            filter,
+            mapping,
+            new ReplaceOptions { IsUpsert = true }
+        );
+
         _logger.LogInformation(
             "Registered reaction role: {Emoji} → Role {RoleId} for message {MessageId}",
             emoji,
