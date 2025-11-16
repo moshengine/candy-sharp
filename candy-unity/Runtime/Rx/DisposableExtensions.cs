@@ -1,4 +1,4 @@
-#if R3_INSTALLED
+#if R3
 using System;
 using R3;
 using UnityEngine;
