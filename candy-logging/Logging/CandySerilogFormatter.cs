@@ -29,7 +29,7 @@ namespace Candy.Logging
         private readonly ConsoleTheme _theme;
         private readonly ValueFormatterDelegate _valueFormatter;
 
-        public CandySerilogFormatter(IEnumerable<string> highlightWords = null, ConsoleTheme theme = null)
+        public CandySerilogFormatter(IEnumerable<string>? highlightWords = null, ConsoleTheme? theme = null)
         {
             _highlightWords = highlightWords ?? new List<string>();
             _theme = theme ?? AnsiConsoleTheme.Code;
@@ -41,7 +41,7 @@ namespace Candy.Logging
             };
         }
 
-        private void RenderThemedValue(LogEventPropertyValue value, TextWriter output, string format)
+        private void RenderThemedValue(LogEventPropertyValue value, TextWriter output, string? format)
         {
             if (value is ScalarValue sv)
             {
@@ -65,7 +65,7 @@ namespace Candy.Logging
             }
         }
 
-        private void RenderScalarValue(ScalarValue scalar, TextWriter output, string format)
+        private void RenderScalarValue(ScalarValue scalar, TextWriter output, string? format)
         {
             if (scalar.Value == null)
             {
@@ -75,11 +75,11 @@ namespace Candy.Logging
 
             if (scalar.Value is string)
             {
-                ApplyStyle(output, ConsoleThemeStyle.String, scalar.Value.ToString());
+                ApplyStyle(output, ConsoleThemeStyle.String, scalar.Value.ToString()!);
             }
             else if (scalar.Value is bool)
             {
-                ApplyStyle(output, ConsoleThemeStyle.Boolean, scalar.Value.ToString().ToLowerInvariant());
+                ApplyStyle(output, ConsoleThemeStyle.Boolean, scalar.Value.ToString()!.ToLowerInvariant());
             }
             else if (IsNumeric(scalar.Value))
             {
@@ -112,7 +112,7 @@ namespace Candy.Logging
         /// Safely tries to format a value with the given format string.
         /// Falls back to default ToString() if formatting fails.
         /// </summary>
-        private string TryFormatValue(object value, string format)
+        private string TryFormatValue(object value, string? format)
         {
             if (string.IsNullOrEmpty(format))
             {
@@ -196,7 +196,7 @@ namespace Candy.Logging
                    value is ulong || value is ushort || value is sbyte;
         }
 
-        private delegate void ValueFormatterDelegate(LogEvent logEvent, string name, LogEventPropertyValue value, string format, TextWriter output);
+        private delegate void ValueFormatterDelegate(LogEvent logEvent, string name, LogEventPropertyValue value, string? format, TextWriter output);
 
         /// <summary>
         /// Main entry point for formatting and writing a log entry.
