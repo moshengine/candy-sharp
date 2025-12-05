@@ -34,7 +34,7 @@ namespace Candy.AspNet
 
         public async Task<List<Page>> QueryDatabaseAsync(
             string databaseId,
-            DatabasesQueryParameters queryParams = null
+            DatabasesQueryParameters? queryParams = null
         )
         {
             if (string.IsNullOrEmpty(databaseId))
@@ -48,6 +48,32 @@ namespace Candy.AspNet
             queryParams ??= new DatabasesQueryParameters();
             var pages = await _client.Databases.QueryAsync(databaseId, queryParams);
             return pages.Results;
+        }
+
+        public async Task<Page> UpdatePageAsync(string pageId, PagesUpdateParameters parameters)
+        {
+            if (string.IsNullOrEmpty(pageId))
+            {
+                throw new ArgumentException(
+                    "Page ID cannot be null or empty.",
+                    nameof(pageId)
+                );
+            }
+
+            return await _client.Pages.UpdateAsync(pageId, parameters);
+        }
+
+        public async Task<Database> GetDatabaseAsync(string databaseId)
+        {
+            if (string.IsNullOrEmpty(databaseId))
+            {
+                throw new ArgumentException(
+                    "Database ID cannot be null or empty.",
+                    nameof(databaseId)
+                );
+            }
+
+            return await _client.Databases.RetrieveAsync(databaseId);
         }
     }
 }

@@ -1,9 +1,7 @@
 ---
-description: Coding guidelines, including documentation preferences
-globs: 
-alwaysApply: true
+description: Guidelines for candy-sharp
+alwaysApply: false
 ---
-
 # Coding Guidelines
 
 ## Developer Profile
@@ -24,7 +22,3 @@ Experienced developer - assume strong understanding of concepts
 - Location: Feature-specific docs should be README.md files in the same folder as the code
 - Comments: Only for complex logic or non-obvious decisions
 - Avoid: Extensive examples, obvious explanations, step-by-step tutorials, feature lists, benefits sections
- 
-## Commit Messages
-
-- Always provide a recommended commit message after making code changes

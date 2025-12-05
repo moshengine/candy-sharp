@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace Candy.Unity.Editor
 {
+#if !UNITY_6000_3_OR_NEWER
     /// <summary>
-    /// Provides a convenient API for custom toolbar implementations.
-    /// Game-specific code can directly add GUI handlers to these lists,
-    /// which are passed through to the underlying ToolbarExtender.
+    /// Legacy API for custom toolbar implementations (Unity < 6.3).
+    /// For Unity 6.3+, use the official MainToolbarElement API instead.
+    /// See: https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Toolbars.MainToolbar.html
     /// </summary>
     public static class CustomToolbar
     {
@@ -22,4 +23,5 @@ namespace Candy.Unity.Editor
         /// </summary>
         public static List<Action> RightToolbarGUI => ToolbarExtender.RightToolbarGUI;
     }
+#endif
 }

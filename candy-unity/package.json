@@ -4,7 +4,6 @@
     "displayName": "Candy Unity",
     "dependencies": {
         "com.bgtools.playerprefseditor": "1.2.2",
-        "com.dbrizov.naughtyattributes": "2.1.4",
         "com.github-glitchenzo.nugetforunity": "4.5.0",
         "com.nobi.roundedcorners": "3.4.1",
         "com.svermeulen.extenject": "9.2.0-stcf3",

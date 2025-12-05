@@ -62,16 +62,10 @@ namespace Candy.Unity.Editor
                     foreach (Match match in matches)
                     {
                         string packageName = match.Groups[1].Value;
-                        string gitPath = match.Groups[2].Value; // e.g., "/candy-unity" or "/unity-assets/debug-log-extensions"
+                        string gitPath = match.Groups[2].Value; // e.g., "/candy-unity" or "/candy-common/unity"
 
                         // Remove leading slash from git path
                         string relativePath = gitPath.TrimStart('/');
-
-                        // Special case: candy-unity package points to /candy-unity/unity subdirectory
-                        if (relativePath == "candy-unity")
-                        {
-                            relativePath = "candy-unity/unity";
-                        }
 
                         string localPath = LOCAL_BASE_PATH + relativePath;
                         string oldValue = $@"""{packageName}"": ""{GITHUB_BASE_URL}{gitPath}""";
@@ -92,19 +86,9 @@ namespace Candy.Unity.Editor
                     foreach (Match match in matches)
                     {
                         string packageName = match.Groups[1].Value;
-                        string localPath = match.Groups[2].Value; // e.g., "candy-unity/unity" or "unity-assets/debug-log-extensions"
+                        string localPath = match.Groups[2].Value; // e.g., "candy-unity" or "candy-common/unity"
 
-                        // Special case: candy-unity/unity subdirectory should map to /candy-unity in git
-                        string gitPath;
-                        if (localPath == "candy-unity/unity")
-                        {
-                            gitPath = "/candy-unity";
-                        }
-                        else
-                        {
-                            gitPath = "/" + localPath;
-                        }
-
+                        string gitPath = "/" + localPath;
                         string externalPath = GITHUB_BASE_URL + gitPath;
                         string oldValue = $@"""{packageName}"": ""{LOCAL_BASE_PATH}{localPath}""";
                         string newValue = $@"""{packageName}"": ""{externalPath}""";

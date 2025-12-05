@@ -8,6 +8,7 @@ namespace Candy.Unity.Editor
 {
     public static class ToolbarCallback
     {
+#if !UNITY_6000_3_OR_NEWER
         static Type m_toolbarType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.Toolbar");
         static Type m_guiViewType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.GUIView");
         
@@ -25,6 +26,7 @@ namespace Candy.Unity.Editor
         static FieldInfo m_imguiContainerOnGui = typeof(UnityEngine.UIElements.IMGUIContainer).GetField("m_OnGUIHandler",
             BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
         static ScriptableObject m_currentToolbar;
+#endif
 
         /// <summary>
         /// Callback for toolbar OnGUI method.
@@ -35,10 +37,13 @@ namespace Candy.Unity.Editor
 
         static ToolbarCallback()
         {
+#if !UNITY_6000_3_OR_NEWER
             EditorApplication.update -= OnUpdate;
             EditorApplication.update += OnUpdate;
+#endif
         }
 
+#if !UNITY_6000_3_OR_NEWER
         static void OnUpdate()
         {
             // Relying on the fact that toolbar is ScriptableObject and gets deleted when layout changes
@@ -155,6 +160,6 @@ namespace Candy.Unity.Editor
 
             OnToolbarGUI?.Invoke();
         }
+#endif
     }
 }
-

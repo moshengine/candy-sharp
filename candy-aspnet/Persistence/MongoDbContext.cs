@@ -1,4 +1,3 @@
-using System;
 using MongoDB.Driver;
 
 namespace Candy.AspNet
@@ -15,9 +14,6 @@ namespace Candy.AspNet
         /// </summary>
         /// <param name="connectionString">The connection string to use for connecting to the MongoDB server.</param>
         /// <param name="databaseName">The name of the database to connect to.</param>
-        /// <remarks>
-        /// The environment variable MONGO_URI must be set with the MongoDB connection string.
-        /// </remarks>
         public MongoDbContext(string connectionString, string databaseName)
         {
             if (string.IsNullOrEmpty(connectionString))

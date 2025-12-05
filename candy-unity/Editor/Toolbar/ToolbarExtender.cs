@@ -6,11 +6,15 @@ using UnityEngine;
 
 namespace Candy.Unity.Editor
 {
+#if !UNITY_6000_3_OR_NEWER
+    /// <summary>
+    /// Legacy toolbar extender for Unity versions before 6.3.
+    /// For Unity 6.3+, use the official MainToolbarElement API instead.
+    /// </summary>
     [InitializeOnLoad]
     public static class ToolbarExtender
     {
         static int toolCount;
-        static GUIStyle commandStyle = null;
 
         public static readonly List<Action> LeftToolbarGUI = new List<Action>();
         public static readonly List<Action> RightToolbarGUI = new List<Action>();
@@ -67,5 +71,5 @@ namespace Candy.Unity.Editor
             GUILayout.EndHorizontal();
         }
     }
+#endif
 }
-
