@@ -32,6 +32,10 @@ namespace Candy.AspNet
             return await _client.Pages.CreateAsync(parameters);
         }
 
+        /// <summary>
+        /// Query a Notion database with automatic pagination support.
+        /// Fetches all matching pages across multiple API calls if needed.
+        /// </summary>
         public async Task<List<Page>> QueryDatabaseAsync(
             string databaseId,
             DatabasesQueryParameters? queryParams = null
@@ -46,8 +50,18 @@ namespace Candy.AspNet
             }
 
             queryParams ??= new DatabasesQueryParameters();
-            var pages = await _client.Databases.QueryAsync(databaseId, queryParams);
-            return pages.Results;
+            var allPages = new List<Page>();
+            string? cursor = null;
+
+            do
+            {
+                queryParams.StartCursor = cursor;
+                var response = await _client.Databases.QueryAsync(databaseId, queryParams);
+                allPages.AddRange(response.Results);
+                cursor = response.HasMore ? response.NextCursor : null;
+            } while (cursor != null);
+
+            return allPages;
         }
 
         public async Task<Page> UpdatePageAsync(string pageId, PagesUpdateParameters parameters)
