@@ -28,18 +28,16 @@ public class ReactionRoleService
             Builders<ReactionRoleMapping>.Filter.Eq(m => m.Emoji, emoji)
         );
 
-        var mapping = new ReactionRoleMapping
-        {
-            MessageId = messageId,
-            Emoji = emoji,
-            RoleId = roleId,
-            GuildId = guildId,
-        };
+        var update = Builders<ReactionRoleMapping>.Update
+            .Set(m => m.MessageId, messageId)
+            .Set(m => m.Emoji, emoji)
+            .Set(m => m.RoleId, roleId)
+            .Set(m => m.GuildId, guildId);
 
-        await _reactionRoles.ReplaceOneAsync(
+        await _reactionRoles.UpdateOneAsync(
             filter,
-            mapping,
-            new ReplaceOptions { IsUpsert = true }
+            update,
+            new UpdateOptions { IsUpsert = true }
         );
 
         _logger.LogInformation(
@@ -115,13 +113,20 @@ public class ReactionRoleService
                     }
 
                     // Get all users who reacted with this emoji
-                    var reactions = message.Reactions.FirstOrDefault(r => r.Key.Name == mapping.Emoji);
+                    var reactionEntry = message.Reactions.FirstOrDefault(
+                        r => EmoteMatches(mapping.Emoji, r.Key)
+                    );
                     var reactedUserIds = new HashSet<ulong>();
-                    
-                    if (reactions.Value.ReactionCount > 0)
+
+                    if (reactionEntry.Key != null && reactionEntry.Value.ReactionCount > 0)
                     {
-                        var users = await message.GetReactionUsersAsync(new Emoji(mapping.Emoji), reactions.Value.ReactionCount).FlattenAsync();
-                        
+                        var users = await message
+                            .GetReactionUsersAsync(
+                                reactionEntry.Key,
+                                reactionEntry.Value.ReactionCount
+                            )
+                            .FlattenAsync();
+
                         foreach (var user in users.Where(u => !u.IsBot))
                         {
                             reactedUserIds.Add(user.Id);
@@ -219,9 +224,10 @@ public class ReactionRoleService
 
             // Find mapping in database
             var emoji = reaction.Emote.Name;
-            var mapping = await _reactionRoles
-                .Find(m => m.MessageId == reaction.MessageId && m.Emoji == emoji)
-                .FirstOrDefaultAsync();
+            var mappings = await _reactionRoles
+                .Find(m => m.MessageId == reaction.MessageId)
+                .ToListAsync();
+            var mapping = mappings.FirstOrDefault(m => EmoteMatches(m.Emoji, reaction.Emote));
 
             if (mapping == null)
                 return;
@@ -280,9 +286,10 @@ public class ReactionRoleService
 
             // Find mapping in database
             var emoji = reaction.Emote.Name;
-            var mapping = await _reactionRoles
-                .Find(m => m.MessageId == reaction.MessageId && m.Emoji == emoji)
-                .FirstOrDefaultAsync();
+            var mappings = await _reactionRoles
+                .Find(m => m.MessageId == reaction.MessageId)
+                .ToListAsync();
+            var mapping = mappings.FirstOrDefault(m => EmoteMatches(m.Emoji, reaction.Emote));
 
             if (mapping == null)
                 return;
@@ -321,6 +328,18 @@ public class ReactionRoleService
         {
             _logger.LogError(ex, "Error handling reaction removed");
         }
+    }
+
+    private static bool EmoteMatches(string mappingEmoji, IEmote emote)
+    {
+        if (Emote.TryParse(mappingEmoji, out var mappingEmote))
+        {
+            if (emote is Emote customEmote)
+                return mappingEmote.Id == customEmote.Id;
+            return string.Equals(mappingEmote.Name, emote.Name, StringComparison.Ordinal);
+        }
+
+        return string.Equals(mappingEmoji, emote.Name, StringComparison.Ordinal);
     }
 }
 

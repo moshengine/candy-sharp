@@ -83,7 +83,8 @@ public class PostingService
         {
             try
             {
-                await message.AddReactionAsync(new Emoji(emoji));
+                IEmote emote = ParseEmote(emoji);
+                await message.AddReactionAsync(emote);
             }
             catch (Exception ex)
             {
@@ -101,6 +102,14 @@ public class PostingService
             emojis.Count(),
             message.Id
         );
+    }
+
+    private static IEmote ParseEmote(string emoji)
+    {
+        // Custom emote format: <:name:id> or <a:name:id> (animated)
+        if (Emote.TryParse(emoji, out var emote))
+            return emote;
+        return new Emoji(emoji);
     }
 
     private async Task<IUserMessage?> FindBotLastMessageAsync(ITextChannel channel, ulong botUserId)
