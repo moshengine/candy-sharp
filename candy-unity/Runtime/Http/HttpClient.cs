@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -18,15 +18,6 @@ namespace Candy.Unity
                 ContractResolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() },
                 // TypeNameHandling = TypeNameHandling.Auto
             };
-        }
-
-        private void Update()
-        {
-            // Set screen resolution to 1080 x 1920 after pressing F4
-            if (Input.GetKeyDown(KeyCode.F4))
-            {
-                Screen.SetResolution(1080, 1920, false);
-            }
         }
 
         public IEnumerator Get<TResponse>(string url, Action<TResponse> onSuccess, Action<string> onFailure = null)
