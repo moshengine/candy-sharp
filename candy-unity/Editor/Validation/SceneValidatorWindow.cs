@@ -27,22 +27,48 @@ namespace Candy.Unity.Editor
         [MenuItem("Tools/Candy/Scene Validator")]
         public static void ShowWindow()
         {
+            if (!GameObjectNamingValidator.IsEnabled)
+            {
+                EditorUtility.DisplayDialog("Scene Validator Disabled",
+                    "Scene Validator is temporarily disabled globally.",
+                    "OK");
+                return;
+            }
+
             var window = GetWindow<SceneValidatorWindow>("Scene Validator");
             window.minSize = new Vector2(500, 300);
             window.Show();
             window.ValidateAllGameObjects();
         }
 
+        [MenuItem("Tools/Candy/Scene Validator", true)]
+        public static bool ValidateShowWindow()
+        {
+            return GameObjectNamingValidator.IsEnabled;
+        }
+
         private void OnEnable()
         {
-            autoValidate = EditorPrefs.GetBool(AutoValidateKey, true);
+            autoValidate = GameObjectNamingValidator.IsEnabled && EditorPrefs.GetBool(AutoValidateKey, false);
         }
 
         private void OnGUI()
         {
+            if (!GameObjectNamingValidator.IsEnabled)
+            {
+                DrawDisabledState();
+                return;
+            }
+
             DrawHeader();
             DrawControls();
             DrawViolationsList();
+        }
+
+        private static void DrawDisabledState()
+        {
+            EditorGUILayout.Space(20);
+            EditorGUILayout.HelpBox("Scene Validator is temporarily disabled globally.", MessageType.Info);
         }
 
         private void DrawHeader()

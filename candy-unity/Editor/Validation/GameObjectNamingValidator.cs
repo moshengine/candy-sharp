@@ -12,12 +12,22 @@ namespace Candy.Unity.Editor
     [InitializeOnLoad]
     public class GameObjectNamingValidator
     {
+        public const bool IsEnabled = false;
+
         private static readonly Regex SnakeCasePattern = new(@"^[a-z]+(_[a-z]+)+$");
         private static readonly Regex AllUppercasePattern = new(@"^[A-Z_\-]+$");
         private const string AutoValidateKey = "GameObjectNamingValidator.AutoValidate";
 
         static GameObjectNamingValidator()
         {
+            EditorApplication.hierarchyChanged -= OnHierarchyChanged;
+            EditorPrefs.SetBool(AutoValidateKey, false);
+
+            if (!IsEnabled)
+            {
+                return;
+            }
+
             if (GetAutoValidateEnabled())
             {
                 EditorApplication.hierarchyChanged += OnHierarchyChanged;
@@ -26,14 +36,19 @@ namespace Candy.Unity.Editor
 
         public static void UpdateAutoValidation(bool enabled)
         {
+            EditorApplication.hierarchyChanged -= OnHierarchyChanged;
+
+            if (!IsEnabled)
+            {
+                EditorPrefs.SetBool(AutoValidateKey, false);
+                return;
+            }
+
+            EditorPrefs.SetBool(AutoValidateKey, enabled);
+
             if (enabled)
             {
-                EditorApplication.hierarchyChanged -= OnHierarchyChanged;
                 EditorApplication.hierarchyChanged += OnHierarchyChanged;
-            }
-            else
-            {
-                EditorApplication.hierarchyChanged -= OnHierarchyChanged;
             }
         }
 
@@ -188,7 +203,7 @@ namespace Candy.Unity.Editor
 
         private static bool GetAutoValidateEnabled()
         {
-            return EditorPrefs.GetBool(AutoValidateKey, true);
+            return IsEnabled && EditorPrefs.GetBool(AutoValidateKey, false);
         }
 
         private class NamingViolation
