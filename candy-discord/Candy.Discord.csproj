@@ -6,9 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Discord.Net" Version="3.18.0" />
-        <PackageReference Include="Discord.Net.Interactions" Version="3.18.0" />
-        <PackageReference Include="MongoDB.Driver" Version="3.*" />
+        <PackageReference Include="Discord.Net" />
+        <PackageReference Include="Discord.Net.Interactions" />
+        <PackageReference Include="MongoDB.Driver" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\candy-common\Candy.Common.csproj" />
