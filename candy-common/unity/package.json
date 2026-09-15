@@ -1,5 +1,6 @@
 {
   "name": "com.danielkreitsch.candy-common",
-  "version": "0.0.0",
-  "displayName": "Candy Common"
+  "version": "0.1.0",
+  "displayName": "Candy Common",
+  "license": "MIT"
 }
