@@ -4,7 +4,13 @@ namespace Candy.AspNet.Auth;
 
 public record CallerIdentity(string UserId, string Role, bool IsService, IReadOnlySet<string> Permissions)
 {
-    public bool HasPermission(string permission) => Permissions.Contains(permission);
+    public bool HasPermission(string permission)
+    {
+        if (Permissions.Contains(PermissionClaimTypes.Admin))
+            return true;
+
+        return Permissions.Contains(permission);
+    }
 
     public static CallerIdentity FromPrincipal(ClaimsPrincipal principal, IRolePermissionDefaults roleDefaults)
     {

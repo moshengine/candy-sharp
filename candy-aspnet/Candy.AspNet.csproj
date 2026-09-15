@@ -9,9 +9,10 @@
         <ProjectReference Include="..\candy-common\Candy.Common.csproj" />
         <ProjectReference Include="..\candy-logging\Candy.Logging.csproj" />
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.*" />
-        <PackageReference Include="MongoDB.Driver" Version="3.*" />
-        <PackageReference Include="Notion.Net" Version="4.2.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.*" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+        <PackageReference Include="MongoDB.Driver" />
+        <PackageReference Include="Notion.Net" />
+        <PackageReference Include="Octokit" />
+        <PackageReference Include="Swashbuckle.AspNetCore" />
     </ItemGroup>
 </Project>
