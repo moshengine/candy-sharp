@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// Base class for objects that can be managed by an ObjectPool.

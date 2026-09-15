@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace Candy.AspNet
+namespace MoshEngine.Candy.AspNet
 {
     /// <summary>
     /// For interacting with a MongoDB database.

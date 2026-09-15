@@ -3,7 +3,7 @@ using Discord.WebSocket;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
-namespace Candy.Discord;
+namespace MoshEngine.Candy.Discord;
 
 public class ReactionRoleService
 {

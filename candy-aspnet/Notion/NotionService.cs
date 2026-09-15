@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Notion.Client;
 
-namespace Candy.AspNet
+namespace MoshEngine.Candy.AspNet
 {
     /// <summary>
     ///   Wraps the Notion client. Supports two usage styles:

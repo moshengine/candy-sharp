@@ -1,6 +1,6 @@
 using Discord;
 
-namespace Candy.Discord;
+namespace MoshEngine.Candy.Discord;
 
 public static class EmbedBuilderExtensions
 {

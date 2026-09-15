@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// Chooses the correct <see cref="IStreamingAssetsTextReader"/> for the current platform.

@@ -3,7 +3,7 @@
 Spring Boot-inspired Serilog console logging for .NET.
 
 ```csharp
-using Candy.Logging;
+using MoshEngine.Candy.Logging;
 
 await Host.CreateDefaultBuilder(args)
     .UseCandyLogging("MyProject")

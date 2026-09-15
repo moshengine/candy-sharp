@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public static class TransformExtensions
     {

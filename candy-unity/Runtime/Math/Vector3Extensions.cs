@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public static class Vector3Extensions
     {

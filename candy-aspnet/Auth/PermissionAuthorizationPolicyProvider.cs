@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public sealed class PermissionAuthorizationPolicyProvider(
     IOptions<AuthorizationOptions> options)

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// StreamingAssets exposed as a URL (not a real file path): Android APK (<c>jar:file:...!/assets/...</c>) and WebGL.

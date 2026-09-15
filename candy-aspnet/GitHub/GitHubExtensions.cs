@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Candy.AspNet
+namespace MoshEngine.Candy.AspNet
 {
     public static class GitHubExtensions
     {

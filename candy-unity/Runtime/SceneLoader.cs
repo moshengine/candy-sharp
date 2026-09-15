@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
   /// <summary>
   ///   Responsible for managing the transition between scenes.

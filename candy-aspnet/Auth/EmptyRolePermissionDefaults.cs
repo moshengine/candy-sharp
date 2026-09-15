@@ -1,4 +1,4 @@
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 /// <summary>
 ///   No-op role defaults for apps using the simple per-user permission system.

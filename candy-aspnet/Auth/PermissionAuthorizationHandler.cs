@@ -2,7 +2,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public sealed class PermissionAuthorizationHandler(
     IRolePermissionDefaults roleDefaults,

@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Candy.Unity.Editor
+namespace MoshEngine.Candy.Unity.Editor
 {
     using static EditorGUICandy;
 

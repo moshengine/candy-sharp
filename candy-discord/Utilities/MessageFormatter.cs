@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Candy.Discord;
+namespace MoshEngine.Candy.Discord;
 
 public static class MessageFormatter
 {

@@ -1,4 +1,4 @@
-﻿namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// Interface for poolable objects. Objects implementing this interface

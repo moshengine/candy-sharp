@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace Candy.Discord;
+namespace MoshEngine.Candy.Discord;
 
 public class ContentLoader
 {

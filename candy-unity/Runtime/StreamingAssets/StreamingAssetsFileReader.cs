@@ -1,7 +1,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// StreamingAssets backed by a normal filesystem path (Editor, Windows/macOS/Linux standalone, iOS, etc.).

@@ -3,7 +3,7 @@ using System;
 using R3;
 using UnityEngine;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// Extensions for R3 disposables with Unity lifecycle integration.

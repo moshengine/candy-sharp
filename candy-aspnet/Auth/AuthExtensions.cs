@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public static class AuthExtensions
 {

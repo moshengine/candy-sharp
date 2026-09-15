@@ -7,7 +7,7 @@ using Serilog.Formatting;
 using Serilog.Formatting.Display;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Candy.Logging
+namespace MoshEngine.Candy.Logging
 {
     /// <summary>
     /// A custom Serilog formatter that provides colorized, structured logging output.

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Candy.Logging
+namespace MoshEngine.Candy.Logging
 {
     /// <summary>
     /// Extension methods for configuring logging with Candy's custom formatting.

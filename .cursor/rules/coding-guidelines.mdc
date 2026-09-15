@@ -14,7 +14,7 @@ Experienced developer - assume strong understanding of concepts
 - Self-documenting code > comments
 - YAGNI principle
 - Show, don't explain
-- Namespaces: Maximum depth of two levels (one dot separator)
+- Namespaces: `MoshEngine.Candy.<area>` (one area after the studio prefix)
 
 ## Documentation
 

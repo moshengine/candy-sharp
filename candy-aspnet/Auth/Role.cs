@@ -1,6 +1,6 @@
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public class Role
 {

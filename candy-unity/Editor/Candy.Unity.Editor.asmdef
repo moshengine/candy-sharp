@@ -1,5 +1,5 @@
 {
-    "name": "Candy.Unity.Editor",
+    "name": "MoshEngine.Candy.Unity.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:c71b7cecc19f1f14fac3a0b482477128",

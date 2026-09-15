@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
 
-namespace Candy.Unity.Editor
+namespace MoshEngine.Candy.Unity.Editor
 {
     public class ProjectStructureValidator : EditorWindow
     {

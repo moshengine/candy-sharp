@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Candy.Unity.Editor
+namespace MoshEngine.Candy.Unity.Editor
 {
     public abstract class GameBrushBase : GridBrushBase
     {

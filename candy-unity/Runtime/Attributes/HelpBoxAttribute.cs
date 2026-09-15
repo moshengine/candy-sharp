@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public enum HelpBoxType
     {

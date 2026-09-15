@@ -1,6 +1,6 @@
 using System.Security.Claims;
 
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public record CallerIdentity(string UserId, string Role, bool IsService, IReadOnlySet<string> Permissions)
 {

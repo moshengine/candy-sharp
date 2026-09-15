@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-namespace Candy.Unity.Editor
+namespace MoshEngine.Candy.Unity.Editor
 {
     /// <summary>
     /// Toggles package dependencies between external (GitHub) and local (file://) paths.
@@ -15,7 +15,7 @@ namespace Candy.Unity.Editor
     /// </summary>
     public static class PackageDependencyToggler
     {
-        private const string GITHUB_BASE_URL = "https://github.com/glowdragon/candy-sharp.git?path=";
+        private const string GITHUB_BASE_URL = "https://github.com/moshengine/candy-sharp.git?path=";
         private const string LOCAL_BASE_PATH = "file:../../../../candy-sharp/";
         private const string MANIFEST_PATH = "Packages/manifest.json";
 
@@ -55,7 +55,7 @@ namespace Candy.Unity.Editor
                 if (toLocal)
                 {
                     // Convert from external to local
-                    // Pattern: "package-name": "https://github.com/glowdragon/candy-sharp.git?path=/some/path"
+                    // Pattern: "package-name": "https://github.com/moshengine/candy-sharp.git?path=/some/path"
                     var pattern = $@"""([^""]+)"":\s*""{Regex.Escape(GITHUB_BASE_URL)}(/[^""]+)""";
                     var matches = Regex.Matches(manifestContent, pattern);
 

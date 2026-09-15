@@ -2,7 +2,7 @@ using Discord;
 using Discord.WebSocket;
 using Microsoft.Extensions.Logging;
 
-namespace Candy.Discord;
+namespace MoshEngine.Candy.Discord;
 
 public static class InteractionExtensions
 {

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public class SceneSwitcher : MonoBehaviour
     {

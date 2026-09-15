@@ -1,6 +1,6 @@
 using MongoDB.Driver;
 
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public class DatabaseRolePermissionDefaults : IRolePermissionDefaults
 {

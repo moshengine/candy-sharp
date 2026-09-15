@@ -4,7 +4,7 @@ using UnityEditor.SceneManagement;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-namespace Candy.Unity.Editor
+namespace MoshEngine.Candy.Unity.Editor
 {
     public abstract class GameBrushEditorBase : GridBrushEditorBase
     {

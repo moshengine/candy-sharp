@@ -5,7 +5,7 @@ using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public class HttpClient : MonoBehaviour
     {

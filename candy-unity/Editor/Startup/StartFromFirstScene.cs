@@ -1,8 +1,8 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
   public class StartFromFirstScene
   {

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Zenject;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
   public class CoreInstaller : MonoInstaller
   {

@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
 
-namespace Candy.AspNet
+namespace MoshEngine.Candy.AspNet
 {
     public static class PersistenceExtensions
     {

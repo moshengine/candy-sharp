@@ -1,4 +1,4 @@
-namespace Candy.AspNet.Auth;
+namespace MoshEngine.Candy.AspNet.Auth;
 
 public interface IUser
 {

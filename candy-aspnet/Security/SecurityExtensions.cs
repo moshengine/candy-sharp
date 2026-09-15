@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Candy.AspNet;
+namespace MoshEngine.Candy.AspNet;
 
 public static class SecurityExtensions
 {

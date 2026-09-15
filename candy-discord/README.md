@@ -17,7 +17,7 @@ Add project reference to your bot's `.csproj`:
 Register services in your `Program.cs`:
 
 ```csharp
-builder.Services.AddSingleton<Candy.Discord.ModerationService>();
+builder.Services.AddSingleton<MoshEngine.Candy.Discord.ModerationService>();
 ```
 
 ## Usage

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Octokit;
 
-namespace Candy.AspNet
+namespace MoshEngine.Candy.AspNet
 {
     /// <summary>
     ///   Thin wrapper over Octokit for the pieces the Tomoni GitHub issue sync

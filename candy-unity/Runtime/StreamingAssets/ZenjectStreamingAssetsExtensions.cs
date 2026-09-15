@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public static class ZenjectStreamingAssetsExtensions
     {

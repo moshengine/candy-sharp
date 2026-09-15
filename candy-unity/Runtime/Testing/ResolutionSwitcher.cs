@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     public class ResolutionSwitcher : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Candy.Discord;
+namespace MoshEngine.Candy.Discord;
 
 public class ReactionRoleMapping
 {

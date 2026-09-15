@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Candy.Common
+namespace MoshEngine.Candy.Common
 {
     /// <summary>
     /// Represents a localized string with translations for different languages.

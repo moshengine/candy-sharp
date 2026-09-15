@@ -19,8 +19,8 @@ There is no backwards-compatibility guarantee. Pin a git tag if you need a stabl
 Add a git URL to `Packages/manifest.json`. Append `#v0.1.0` (or any later tag) to pin:
 
 ```json
-"com.danielkreitsch.candy-unity": "https://github.com/glowdragon/candy-sharp.git?path=/candy-unity#v0.1.0",
-"com.danielkreitsch.candy-common": "https://github.com/glowdragon/candy-sharp.git?path=/candy-common/unity#v0.1.0"
+"com.moshengine.candy-unity": "https://github.com/moshengine/candy-sharp.git?path=/candy-unity#v0.1.0",
+"com.moshengine.candy-common": "https://github.com/moshengine/candy-sharp.git?path=/candy-common/unity#v0.1.0"
 ```
 
 ## .NET

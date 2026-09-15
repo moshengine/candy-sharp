@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using Zenject;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// Factory class for creating ObjectPool instances using Zenject dependency injection framework.

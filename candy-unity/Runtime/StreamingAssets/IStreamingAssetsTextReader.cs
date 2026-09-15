@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Candy.Unity
+namespace MoshEngine.Candy.Unity
 {
     /// <summary>
     /// Reads text from paths under <see cref="UnityEngine.Application.streamingAssetsPath"/>.
