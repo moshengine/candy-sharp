@@ -1,6 +1,6 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: true
 ---
 
@@ -10,7 +10,5 @@ This repository contains personal C# libraries and Unity packages.
 
 - candy-common: Library for all projects
 - candy-aspnet: Library for my ASP.NET projects
-- candy-blazor: Library for my Blazor projects (WASM)
 - candy-discord: Library for my Discord bots
 - candy-unity: Package for my Unity projects
-- unity-assets: Packages from different sources
